@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector de Dispositivo</title>
+    <script>
+        // Función para detectar si es un dispositivo móvil
+        function esDispositivoMovil() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Redirigir según el tipo de dispositivo
+        function redirigirSegunDispositivo() {
+            if (esDispositivoMovil()) {
+                // Redirigir a una URL para teléfonos
+                window.location.href = "https://www.discrimine.org/inicio-mobile";
+            } else {
+                // Redirigir a una URL para PCs
+                window.location.href = "https://www.discrimine.org/inicio";
+            }
+        }
+
+        // Ejecutar al cargar la página
+        window.onload = redirigirSegunDispositivo;
+    </script>
+</head>
+<body>
+    <p>Redirigiendo según tu dispositivo...</p>
+</body>
+</html>
 
