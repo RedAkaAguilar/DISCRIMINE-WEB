@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DISCRIMINE</title>
+  <title>DISCRIMINE - Servidor de Minecraft</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
@@ -49,24 +49,30 @@
       text-decoration: none;
       margin-left: 20px;
       transition: color 0.3s;
+      cursor: pointer;
     }
 
     .navbar-right a:hover {
       color: #00ffc8;
     }
 
-    .section {
+    .screen {
+      display: none;
       padding: 60px 20px;
       border-bottom: 1px solid #333;
     }
 
-    .section h2 {
+    .screen.active {
+      display: block;
+    }
+
+    .screen h2 {
       font-size: 2rem;
       margin-bottom: 10px;
       color: #00ffc8;
     }
 
-    .section p {
+    .screen p {
       max-width: 700px;
       font-size: 1.1rem;
       line-height: 1.6;
@@ -109,30 +115,31 @@
       <span class="server-name">DISCRIMINE</span>
     </div>
     <nav class="navbar-right">
-      <a href="#sobre-nosotros"><i class="fas fa-users"></i> Sobre Nosotros</a>
-      <a href="#client"><i class="fas fa-download"></i> Client</a>
-      <a href="#temporada"><i class="fas fa-calendar-alt"></i> Temporada</a>
-      <a href="#redes"><i class="fas fa-share-alt"></i> Redes Sociales</a>
+      <a onclick="mostrarPantalla('sobre-nosotros')"><i class="fas fa-users"></i> Sobre Nosotros</a>
+      <a onclick="mostrarPantalla('client')"><i class="fas fa-download"></i> Client</a>
+      <a onclick="mostrarPantalla('temporada')"><i class="fas fa-calendar-alt"></i> Temporada</a>
+      <a onclick="mostrarPantalla('redes')"><i class="fas fa-share-alt"></i> Redes Sociales</a>
     </nav>
   </header>
 
   <main class="content">
-    <section id="sobre-nosotros" class="section">
+    <section id="sobre-nosotros" class="screen active">
       <h2>Sobre Nosotros</h2>
       <p>Bienvenido a DISCRIMINE, un servidor de Minecraft con una comunidad vibrante y modos únicos de juego.</p>
     </section>
 
-    <section id="client" class="section">
+    <section id="client" class="screen">
       <h2>Client</h2>
       <p>Descarga nuestro launcher personalizado y accede al servidor sin complicaciones.</p>
+      <p><a href="#" style="color:#00ffc8;"><i class="fas fa-download"></i> Descargar Launcher</a></p>
     </section>
 
-    <section id="temporada" class="section">
+    <section id="temporada" class="screen">
       <h2>Temporada</h2>
-      <p>Estamos en la Temporada 5: "El Amanecer del Nether". Nuevas mazmorras, economía y eventos.</p>
+      <p>Estamos en la Temporada 5: "El Amanecer del Nether". Nuevas mazmorras, economía y eventos únicos.</p>
     </section>
 
-    <section id="redes" class="section">
+    <section id="redes" class="screen">
       <h2>Redes Sociales</h2>
       <p>Síguenos en nuestras redes para mantenerte al tanto de todo:</p>
       <ul class="social-icons">
@@ -146,6 +153,13 @@
   <footer class="footer">
     © 2025 DISCRIMINE - Todos los derechos reservados.
   </footer>
+
+  <script>
+    function mostrarPantalla(id) {
+      const secciones = document.querySelectorAll('.screen');
+      secciones.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
-
