@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DISCRIMINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pixelify Sans', sans-serif;
+      background: url('img/bg-web.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #111, #222);
+      padding: 10px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .server-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #f8de4d;
+    }
+
+    .navbar-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .navbar-right a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .navbar-right a:hover {
+      color: #f8de4d;
+    }
+
+    .screen {
+      display: none;
+      padding: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .screen h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #f8de4d;
+    }
+
+    .screen p {
+      max-width: 100%;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .screen-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .screen-image img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .screen-text {
+      text-align: center;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+    }
+
+    .social-icons li {
+      margin: 10px 0;
+    }
+
+    .social-icons a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #f8de4d;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* MEDIA QUERY PARA MÓVILES */
+    @media (min-width: 600px) {
+      .screen-content {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .screen-image img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .navbar-right {
+        margin-top: 0;
+        justify-content: flex-end;
+      }
+
+      .screen-text {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <img src="img/icon-discrimine.png" alt="Icono del Servidor" class="logo">
+    <nav class="navbar-right">
+      <a onclick="mostrarPantalla('sobre-nosotros')"><i class="fas fa-users"></i> Nosotros</a>
+      <a onclick="mostrarPantalla('client')"><i class="fas fa-download"></i> Client</a>
+      <a onclick="mostrarPantalla('temporada')"><i class="fas fa-calendar-alt"></i> Temporada</a>
+      <a onclick="mostrarPantalla('redes')"><i class="fas fa-share-alt"></i> Redes</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section id="sobre-nosotros" class="screen active">
+      <div class="screen-content">
+        <div class="screen-image">
+          <img src="img/sobrenosotros.png" alt="Sobre Nosotros">
+        </div>
+        <div class="screen-text">
+          <h2>Sobre Nosotros</h2>
+          <p>Bienvenido a DISCRIMINE, una comunidad grande y en constante crecimiento, donde jugadores de todas las plataformas pueden disfrutar de una experiencia única en Minecraft. Descubre un servidor sin límites, con un mundo por explorar, sistema de economía, combate mejorado y compatibilidad total desde móvil hasta PC. ¡Únete hoy!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="client" class="screen">
+      <div class="screen-content">
+        <div class="screen-image">
+          <img src="img/client.png" alt="Client">
+        </div>
+        <div class="screen-text">
+          <h2 style="color: #1fe2f3;">Client</h2>
+          <p>Descarga nuestro Cliente y accede al servidor sin complicaciones.</p>
+          <p><a href="#" style="color:#00ffc8;"><i class="fas fa-download"></i> Descargar Client</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="temporada" class="screen">
+      <div class="screen-content">
+        <div class="screen-image">
+          <img src="img/temporada.png" alt="Temporada">
+        </div>
+        <div class="screen-text">
+          <h2>Temporada</h2>
+          <p>Estamos en la Temporada 5: "El Amanecer del Nether". Nuevas mazmorras, economía y eventos únicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="redes" class="screen">
+      <div class="screen-content">
+        <div class="screen-image">
+          <img src="img/redessociales.png" alt="Redes Sociales">
+        </div>
+        <div class="screen-text">
+          <h2 style="color: #f72cc5;">Redes Sociales</h2>
+          <p>Síguenos en nuestras redes para mantenerte al tanto de todo:</p>
+          <ul class="social-icons">
+            <li><a href="https://discord.gg/DE2DUDtzZm"><i class="fab fa-discord"></i> Discord</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function mostrarPantalla(id) {
+      const secciones = document.querySelectorAll('.screen');
+      secciones.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
