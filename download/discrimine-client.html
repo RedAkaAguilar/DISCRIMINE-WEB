@@ -1,129 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client DISCRIMINE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Pixelify Sans', sans-serif;
-      background: url('img/bg-web.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .logo-wrapper {
-      width: 100%;
-      max-width: 900px;
-      position: relative;
-      padding-top: 56.25%;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .logo-wrapper img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .descripcion {
-      max-width: 800px;
-      text-align: center;
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-
-    .descripcion h2 {
-      color: #f8de4d;
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .capturas {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .captura-wrapper {
-      width: 100%;
-      max-width: 350px;
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .captura-wrapper:hover {
-      transform: scale(1.03);
-    }
-
-    .captura-wrapper img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .boton-descarga {
-      background-color: #00ffc8;
-      color: #111;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 0 20px #00ffc8, 0 0 40px #00ffc8;
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-
-    .boton-descarga:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #00ffc8, 0 0 60px #00ffc8;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cliente oficial de DISCRIMINE para PC. Descarga directa con mods y optimización.">
+  <title>Client DISCRIMINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pixelify Sans', sans-serif;
+      background: url('img/bg-web.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
     }
-  </style>
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .logo-wrapper {
+      width: 100%;
+      max-width: 900px;
+      position: relative;
+      padding-top: 56.25%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .logo-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .descripcion h2 {
+      color: #f8de4d;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .capturas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .captura-wrapper {
+      width: 100%;
+      max-width: 350px;
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .captura-wrapper:hover {
+      transform: scale(1.03);
+    }
+
+    .captura-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .boton-descarga {
+      background-color: #00ffc8;
+      color: #111;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 20px #00ffc8, 0 0 40px #00ffc8;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .boton-descarga:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00ffc8, 0 0 60px #00ffc8;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00ffc8; }
+      50% { box-shadow: 0 0 30px #00ffc8; }
+      100% { box-shadow: 0 0 10px #00ffc8; }
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
-    <div class="logo-wrapper">
-      <img src="img/logo-client.png" alt="Logo Client DISCRIMINE">
-    </div>
-    <div class="descripcion">
-      <h2>Client Oficial de DISCRIMINE para PC</h2>
-      <p>Descarga nuestro cliente listo para jugar y conéctate al servidor sin configuraciones complicadas. Incluye mods esenciales, optimización de rendimiento, y acceso directo al mundo de DISCRIMINE. Compatible con Windows 10 y 11.</p>
-    </div>
-    <div class="capturas">
-      <div class="captura-wrapper"><img src="img/captura1.jpg" alt="Captura 1"></div>
-      <div class="captura-wrapper"><img src="img/captura2.jpg" alt="Captura 2"></div>
-      <div class="captura-wrapper"><img src="img/captura3.jpg" alt="Captura 3"></div>
-    </div>
-    <a href="https://tu-enlace-de-descarga.com/client.zip" class="boton-descarga">
-      <i class="fas fa-download"></i> Descargar Client
-    </a>
-  </main>
+  <main class="container">
+    <header class="logo-wrapper">
+      <img src="img/logo-client.png" alt="Logo del cliente DISCRIMINE">
+    </header>
+
+    <section class="descripcion">
+      <h2>Cliente Oficial de DISCRIMINE para PC</h2>
+      <p>Descarga nuestro cliente listo para jugar y conéctate al servidor sin configuraciones complicadas. Incluye mods esenciales, optimización de rendimiento, y acceso directo al mundo de DISCRIMINE. Compatible con Windows 10 y 11.</p>
+    </section>
+
+    <section class="capturas">
+      <div class="captura-wrapper">
+        <img src="img/captura1.jpg" alt="Captura del juego 1">
+      </div>
+      <div class="captura-wrapper">
+        <img src="img/captura2.jpg" alt="Captura del juego 2">
+      </div>
+      <div class="captura-wrapper">
+        <img src="img/captura3.jpg" alt="Captura del juego 3">
+      </div>
+    </section>
+
+    <a href="https://tu-enlace-de-descarga.com/client.zip" class="boton-descarga">
+      <i class="fas fa-download"></i> Descargar Client
+    </a>
+  </main>
 </body>
 </html>
