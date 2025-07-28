@@ -25,13 +25,23 @@
       gap: 40px;
     }
 
-    .logo-grande {
+    .logo-wrapper {
       width: 100%;
       max-width: 900px;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
+      position: relative;
+      padding-top: 56.25%;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
       border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .logo-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .descripcion {
@@ -54,18 +64,28 @@
       gap: 20px;
     }
 
-    .capturas img {
+    .captura-wrapper {
       width: 100%;
       max-width: 350px;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+      position: relative;
+      padding-top: 56.25%;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
       transition: transform 0.3s;
     }
 
-    .capturas img:hover {
+    .captura-wrapper:hover {
       transform: scale(1.03);
+    }
+
+    .captura-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .boton-descarga {
@@ -104,15 +124,17 @@
 </head>
 <body>
   <main class="container">
-    <img src="img/logo-client.png" alt="Logo Client DISCRIMINE" class="logo-grande">
+    <div class="logo-wrapper">
+      <img src="img/logo-client.png" alt="Logo Client DISCRIMINE">
+    </div>
     <div class="descripcion">
       <h2>Client Oficial de DISCRIMINE para PC</h2>
       <p>Descarga nuestro cliente listo para jugar y conéctate al servidor sin configuraciones complicadas. Incluye mods esenciales, optimización de rendimiento, y acceso directo al mundo de DISCRIMINE. Compatible con Windows 10 y 11.</p>
     </div>
     <div class="capturas">
-      <img src="img/captura1.jpg" alt="Captura 1">
-      <img src="img/captura2.jpg" alt="Captura 2">
-      <img src="img/captura3.jpg" alt="Captura 3">
+      <div class="captura-wrapper"><img src="img/captura1.jpg" alt="Captura 1"></div>
+      <div class="captura-wrapper"><img src="img/captura2.jpg" alt="Captura 2"></div>
+      <div class="captura-wrapper"><img src="img/captura3.jpg" alt="Captura 3"></div>
     </div>
     <a href="https://tu-enlace-de-descarga.com/client.zip" class="boton-descarga">
       <i class="fas fa-download"></i> Descargar Client
