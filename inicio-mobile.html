@@ -225,6 +225,15 @@
       secciones.forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+    window.onload = function () {
+      // Detectar si es móvil
+      var esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      // Si NO es móvil (probablemente PC), redirigir
+      if (!esMovil) {
+        window.location.href = "https://tu-enlace-personalizado.com"; // Cambia esto por tu URL
+      }
+    };
   </script>
 </body>
 </html>
