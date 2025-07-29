@@ -206,6 +206,13 @@ Descubre un servidor sin límites, con un mundo por explorar, con sistema de eco
       secciones.forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+    function esDispositivoMovil() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    if (esDispositivoMovil()) {
+    window.location.href = "https://www.discrimine.org/mobile";
+    }
   </script>
 </body>
 </html>
